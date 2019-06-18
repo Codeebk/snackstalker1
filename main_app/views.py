@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 import uuid
 import boto3
 from .models import Post, Photo
@@ -11,19 +13,20 @@ S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
 BUCKET = 'ushio'
 
 
-class PostUpdate(UpdateView):
+class PostUpdate(LoginRequiredMixin, UpdateView):
   model = Post
   fields = ['title', 'date', 'time', 'address', 'category', 'description']  
 
 # Class views
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
   model = Post
-  fields = ['title', 'date', 'time', 'address', 'category', 'description'] 
+  fields = ['title', 'date', 'time', 'address', 'category', 'description']
+   
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class PostDelete(DeleteView):
+class PostDelete(LoginRequiredMixin, DeleteView):
   model = Post
   success_url = '/posts/'
 
