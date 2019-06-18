@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Post Details</h1>
+<h3>Details</h3>
 
 <div class="card">
   
     <div class="card-content">
         <span class="card-title">{{ post.title }}</span>
-        <p>Description: {{ post.description }}</p>
-        <p>Posted by: {{ post.user }}</p>
+            <p>{{ post.date }}</p>
+            <p>{{ post.address }}</p>
+            <p>{{ post.category }}</p>
+            <p>Description: {{ post.description }}</p>
+            <p>Posted by: {{ post.user }}</p>
+           
         <div class="card-action">
             <a href="{% url 'posts_update' post.id %}">Edit</a>
             <a href="{% url 'posts_delete' post.id %}">Delete</a>

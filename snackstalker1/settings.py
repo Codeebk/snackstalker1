@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/posts/'
 LOGOUT_REDIRECT_URL = '/posts/'
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
+# # Configure Django App for Heroku.
+# import django_heroku
+# django_heroku.settings(locals())
