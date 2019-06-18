@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h4>Post List</h4>
+
+{% for post in posts %}
+<a href="{% url 'detail' post.id %}">
+    <div class="card">
+    
+      <div class="card-image">
+            {% if post.photo_set.first|length > 0 %}
+          <img class="responsive-img card-panel" src="{{photo.url}}">
+          {% else %}
+            <p>no picture</p>
+          {% endif %}
+        
+          </div>
+        <div class="card-content">
+            <span class="card-title teal-text text-teal lighten-2">{{ post.title }}</span>
+            <p>Description: {{ post.description }}</p>
+            <p>Posted by: {{ post.user }}</p>
+           
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}

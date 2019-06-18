@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snack Stalker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                
+                <ul>
+                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;SnackStalker</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'about' %}">About</a></li>
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'index' %}">View All Posts</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'posts_create' %}">Add Post</a></li>
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'signup' %}">Sign up</a></li>
+                    <li><a class="teal-text text-teal lighten-2" href="{% url 'login' %}">Log In</a></li>
+                  {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+  	 <footer class="page-footer transparent teal-text text-teal lighten-2">
+       <div class="center-align">All Rights Reserved, &copy; 2019 Snack Stalker &nbsp;</div>
+    </footer>
+</body>
+</html>
