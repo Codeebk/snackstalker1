@@ -1,3 +1,4 @@
 django
+boto3
 gunicorn
 django-heroku
