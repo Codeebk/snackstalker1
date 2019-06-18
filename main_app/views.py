@@ -13,12 +13,12 @@ BUCKET = 'ushio'
 
 class PostUpdate(UpdateView):
   model = Post
-  fields = ['title', 'date', 'address', 'category', 'description']  
+  fields = ['title', 'date', 'time', 'address', 'category', 'description']  
 
 # Class views
 class PostCreate(CreateView):
   model = Post
-  fields = ['title', 'date', 'address', 'category', 'description']
+  fields = ['title', 'date', 'time', 'address', 'category', 'description'] 
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)

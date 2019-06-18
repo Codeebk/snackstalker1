@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
   title = models.CharField(max_length=100)
   date = models.DateField('Post Date', default='2020-01-01')
+  time = models.CharField(max_length=100, default='')
   address = models.CharField(max_length=250, default='Austin, TX')
   category = models.CharField(max_length=100, default='Food')
   description = models.TextField(max_length=250)
