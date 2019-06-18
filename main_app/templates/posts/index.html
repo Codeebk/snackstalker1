@@ -8,10 +8,10 @@
     <div class="card">
     
       <div class="card-image">
-            {% if post.photo_set.first|length > 0 %}
-          <img class="responsive-img card-panel" src="{{photo.url}}">
+            {% if post.photo_set.all|length > 0 %}
+          <img class="responsive-img card-panel" src="{{ post.photo_set.first.url }}">
           {% else %}
-            <p>no picture</p>
+            <p></p>
           {% endif %}
         
           </div>
