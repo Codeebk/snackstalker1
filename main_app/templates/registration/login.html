@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+
+<div class="center-align">
+<h2></h2>
+<!-- <h3>Log In</h3> -->
+<a><img src="https://i.imgur.com/4KvWKQ6.png" title="source: imgur.com" /></a>
+<h3>SnackStalker</h3>
+
+
+
+<!-- Add the login form -->
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" class="btn" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+</div>
+</div>
+
+
+{% endblock %}
