@@ -7,6 +7,7 @@
     {% csrf_token %}
     <input type="text" name="title" maxlength="100" required="" id="id_title">
     <input type="text" class="datepicker" name="date" value="2020-01-01" required="" id="id_date">
+    <input type="text" class="timepicker" name="time" maxlength="100" value="" placeholder="6:00am" required="" id="id_time">
     <input type="text" name="address" value="Austin, TX" maxlength="250" required="" id="id_address">
     <input type="text" name="category" value="Food" maxlength="100" required="" id="id_category">
     <textarea name="description" cols="40" rows="10" maxlength="250" required="" id="id_description"></textarea>
@@ -26,6 +27,14 @@
       setDefaultDate: true,
       autoClose: true
     });
+
+    var timeEl = document.getElementById('id_time');
+    M.Timepicker.init(timeEl, {
+      defaultTime: 'now',
+      autoClose: true
+    })
+
+   
 
 </script>    
 {% endblock %}
