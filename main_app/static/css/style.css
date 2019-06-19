@@ -2,7 +2,15 @@
     z-index: 1;
 }
 
-nav {
+.navbar-fixed {
     margin-top: 15px;
     
 }
+
+img {
+    margin-top: 5px;
+}
+
+/* #logo {
+    height: 58px;
+} */
