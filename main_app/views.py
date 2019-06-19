@@ -10,8 +10,8 @@ from .models import Post, Photo
 
 # from django.http import 
 S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
-# BUCKET = 'ushio'
-BUCKET = 'catcollector9'
+BUCKET = 'ushio'
+# BUCKET = 'catcollector9'
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
