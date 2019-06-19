@@ -5,7 +5,7 @@
 
 {% for post in posts %}
 <a href="{% url 'detail' post.id %}">
-    <div class="card">
+    <div class="card horizontal hoverable">
     
       <div class="card-image">
             {% if post.photo_set.all|length > 0 %}
