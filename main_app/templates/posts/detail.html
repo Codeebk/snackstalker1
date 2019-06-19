@@ -1,46 +1,58 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h3>Details</h3>
+<div class="container">
+    <h3>Details</h3>
 
-<div class="card">
-  
-    <div class="card-content">
-        <span class="card-title">{{ post.title }}</span>
-            <p>{{ post.date }}</p>
-            <p>{{ post.time }}</p>
-            <p>{{ post.address }}</p>
-            <p>{{ post.category }}</p>
-            <p>Description: {{ post.description }}</p>
-            <p>Posted by: {{ post.user }}</p>
-           
-            {% if user.username == post.user.username %}
-        <div class="card-action">
-            <a href="{% url 'posts_update' post.id %}">Edit</a>
-            <a href="{% url 'posts_delete' post.id %}">Delete</a>
-          </div>
-          {% else %}
-   
-          
-          {% endif %}
+    <div class="card">
+      
+        <div class="card-content collection with-header">
+            <!-- <span class="card-title">{{ post.title }}</span>
+                <p class="collection-item">{{ post.date }}</p>
+                <p class="collection-item">{{ post.time }}</p>
+                <p class="collection-item">{{ post.address }}  <a class="waves-effect waves-light btn-small" href="https://www.google.com/maps/search/?api=1&query={{ post.address }}" target="_blanck" >Launch maps</a></p>
+
+                <p class="collection-item">{{ post.category }}</p>
+                <p class="collection-item">Description: {{ post.description }}</p>
+                <p class="collection-item">Posted by: {{ post.user }}</p> -->
+
+                <ul>
+                  <li class="collection-header"><h4>{{ post.title }}</h4></li>
+                  <li id="li_title" class="collection-item"><span id="detLabel">When: </span>{{ post.date }}</li>
+                  <li class="collection-item"><span id="detLabel">Time: </span>{{ post.time }}</li>
+                  <li class="collection-item"><div><span id="detLabel">Address: </span>{{ post.address }}<a href="https://www.google.com/maps/search/?api=1&query={{ post.address }}" target="_blanck" class="secondary-content"><i class="material-icons right">place</i></a></div></li>
+                  <li class="collection-item"><span id="detLabel">Category: </span>{{ post.category }}</li>
+                  <li class="collection-item"><span id="detLabel">Description: </span>{{ post.description }}</li>
+                  <li class="collection-item"><span id="detLabel">Posted By: </span>{{ post.user }}</li>
+                </ul>
+              
+                {% if user.username == post.user.username %}
+            <div class="card-action">
+                <a href="{% url 'posts_update' post.id %}">Edit</a>
+                <a href="{% url 'posts_delete' post.id %}">Delete</a>
+              </div>
+              {% else %}
+      
+              
+              {% endif %}
+        </div>
     </div>
+
+    <!-- Insert photo markup below this comment -->
+    {% for photo in post.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+
+    {% if user.username == post.user.username %}
+    <form action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+        {% csrf_token %}
+        <input type="file" name="photo-file">
+        <br><br>
+        <input type="submit" class="btn #39C0BA" value="Upload Photo">
+    </form>
+    {% else %}
+    {% endif %}
 </div>
-
-<!-- Insert photo markup below this comment -->
-{% for photo in post.photo_set.all %}
-  <img class="responsive-img card-panel" src="{{photo.url}}">
-{% empty %}
-  <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-{% endfor %}
-
-{% if user.username == post.user.username %}
-<form action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <input type="submit" class="btn" value="Upload Photo">
-</form>
-{% else %}
-{% endif %}
-
 {% endblock %}
