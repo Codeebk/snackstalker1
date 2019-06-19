@@ -20,7 +20,10 @@
             <!-- <p>{{ post.date }}</p> -->
             <p>{{ post.time }}</p>
             <!-- <p>{{ post.address }}</p> -->
-            <p><i class="material-icons #39C0BA">restaurant_menu</i> {{ post.category }}</p>
+            <div class="row">
+              <div class="col s1"><i class="small material-icons">restaurant_menu</i></div>
+              <div class="col s2"> {{ post.category }}</div>
+            </div>
             <!-- <p>Description: {{ post.description }}</p> -->
             <p>Posted by: {{ post.user }}</p>
            

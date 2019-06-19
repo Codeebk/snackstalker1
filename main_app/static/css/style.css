@@ -27,7 +27,27 @@ h3 {
 
 p {
     color: black;
+    
 }
+
+div.row {
+    margin-bottom: 0px;
+}
+
+
+
+div.col.s2 {
+    padding-top: 2px;
+    padding-left: 0px;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+i {
+    color: #39C0BA;
+}
+
+
 
 img {
     margin-top: 10px;
