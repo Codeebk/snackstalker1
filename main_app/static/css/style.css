@@ -1,13 +1,15 @@
 .sidenav-overlay {
     z-index: 1;
-<<<<<<< Updated upstream
-=======
+
 }
 
-nav {
+
+.navbar-fixed {
+
     margin-top: 15px;
     
 }
+
 
 #desc {
     margin-left: 4px;
@@ -29,5 +31,10 @@ h3 {
 
 p {
     color: black;
->>>>>>> Stashed changes
+
 }
+
+img {
+    margin-top: 5px;
+}
+
