@@ -25,7 +25,7 @@ SECRET_KEY = 'qa#1a1@051sjeh87cs199rs9uc_u$!kh(_l8)27r%1_5-42@37'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['snackstalker1.herokuapp.com']
 
 
 # Application definition
@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/posts/'
 LOGOUT_REDIRECT_URL = '/posts/'
 
-# # Configure Django App for Heroku.
-# import django_heroku
-# django_heroku.settings(locals())
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
