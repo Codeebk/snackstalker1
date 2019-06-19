@@ -1,12 +1,40 @@
 .sidenav-overlay {
     z-index: 1;
+
 }
 
+
 .navbar-fixed {
+
     margin-top: 15px;
     
+}
+
+
+#desc {
+    margin-left: 4px;
+    
+}
+
+.input-field>label {
+    margin-left: 0px;
+}
+
+#detLabel {
+    font-weight: bold;
+    color: #39C0BA;
+}
+
+h3 {
+    color: #39C0BA;
+}
+
+p {
+    color: black;
+
 }
 
 img {
     margin-top: 5px;
 }
+
