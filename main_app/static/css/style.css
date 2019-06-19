@@ -50,7 +50,9 @@ i {
     color: #39C0BA;
 }
 
-
+.card-image {
+    margin-left: 8px;
+}
 
 img {
     margin-top: 10px;
