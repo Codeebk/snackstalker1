@@ -31,16 +31,19 @@ p {
 }
 
 div.row {
-    margin-bottom: 0px;
+   margin: auto;
 }
 
-
+#clock {
+    padding-top: 1vmin;
+}
 
 div.col.s2 {
-    padding-top: 2px;
-    padding-left: 0px;
-    font-size: 20px;
-    margin-left: 0px;
+  padding-left: 3vmin;
+  padding-top: .5vmin;
+  padding-right: 0px;
+  padding-bottom: 0px;
+   
 }
 
 i {
@@ -57,6 +60,24 @@ img {
 @media (max-width: 600px) {
     img {
         margin-top: 5px;
+    }
+
+    img.responsive-img.card-panel {
+        padding: 5px;
+        margin-top: 15px;
+    }
+
+    div.card-content {
+        font-size: 10px;
+    }
+
+    span.card-title.teal-text.text-teal.lighten-2 {
+        font-size: 15px;
+        margin: auto;
+    }
+    
+    i.small.material-icons {
+        font-size: 15px;
     }
 }
 
