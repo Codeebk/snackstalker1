@@ -1,15 +1,11 @@
 .sidenav-overlay {
     z-index: 1;
-
 }
 
-
 .navbar-fixed {
-
     margin-top: 15px;
     
 }
-
 
 #desc {
     margin-left: 4px;
@@ -31,10 +27,23 @@ h3 {
 
 p {
     color: black;
-
 }
 
 img {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
+
+@media (max-width: 600px) {
+    img {
+        margin-top: 5px;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    img {
+        margin-top: 9px;
+    }
+}
