@@ -21,8 +21,8 @@
               
                 {% if user.username == post.user.username %}
             <div class="card-action">
-                <a href="{% url 'posts_update' post.id %}">Edit</a>
-                <a href="{% url 'posts_delete' post.id %}">Delete</a>
+                <a href="{% url 'posts_update' post.id %}" class="btn">Edit</a>
+                <a href="{% url 'posts_delete' post.id %}" class="btn red darken-2">Delete</a>
               </div>
               {% else %}
       
