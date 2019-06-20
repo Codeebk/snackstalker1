@@ -52,7 +52,7 @@ def posts_detail(request, post_id):
   return render(request, 'posts/detail.html', {'post': post})
 
 def get_user_profile(request):
-  posts = Post.objects.filter(user=request.user)
+  posts = Post.objects.filter(user=request.user).order_by('date')
   return render(request, 'main_app/user_profile.html', {'posts': posts})
 
 def signup(request):
