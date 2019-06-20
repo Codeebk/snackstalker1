@@ -1,22 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <!-- Leaving the action empty makes the form post to the same url used to display it -->
-<!-- <div class="container">
-    <div class="card"> -->
 
-      <!-- <form action="" method="post" class="card-content"> -->
-        <!-- Django requires the following for security purposes -->
-        <!-- {% csrf_token %}
-        <input type="text" name="title" maxlength="100" required="" id="id_title">
-        <input type="text" class="datepicker" name="date" value="2020-01-01" required="" id="id_date">
-        <input type="text" class="timepicker" name="time" maxlength="100" value="" placeholder="6:00am" required="" id="id_time">
-        <input type="text" name="address" value="Austin, TX" maxlength="250" required="" id="id_address">
-        <input type="text" name="category" value="Food" maxlength="100" required="" id="id_category">
-        <textarea name="description" cols="40" rows="10" maxlength="250" required="" id="id_description"></textarea>
-        <input type="submit" value="Submit!" class="btn">
-      </form> -->
-      <div class="row">
+    <div class="card hoverable"> 
+      <div class="row card-content">
         <form action="" method="post" class="col s12">
             {% csrf_token %}
           <div class="row">
@@ -57,6 +44,7 @@
           <input type="submit" value="Submit!" class="btn">
         </form>
       </div>
+    </div>
 
     <!-- </div>
   </div>   -->

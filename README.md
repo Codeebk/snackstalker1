@@ -4,30 +4,27 @@
 
 ## Technologies used
 * Python  
+* JavaScript  
 * Django  
+* Materialize  
 * PostgreSQL  
 * Heroku  
 
 ## Pitch Deck
 
 ## Planning
-Trello  
--[link](https://trello.com/b/HEPtOEQr/unit-3-project-hackathon)  
+-[Trello](https://trello.com/b/HEPtOEQr/unit-3-project-hackathon)  
 ERD  
 ![ERD](../master/images/snack-stalker-erd.png)
 
 ## Getting Started
 Instructions  
-link to Heroku-[link](https://snackstalker1.herokuapp.com/)
+link to Heroku-[SnackStalker](https://snackstalker1.herokuapp.com/)
 
 ## Authors
-Codee King  - "link to github"   
-Omar Calzada - "link to github"  
+Codee King  - [GitHub](https://github.com/Codeebk)  
+Omar Calzada - [GitHub](https://github.com/omarclzd)  
 Landry Thomes - "link to personal portfolio"  
 Liberty Gallagher - "link to personal portfolio"  
 
 ## Next Steps
-okkkkk
-hi
-bye
-asdf

@@ -15,13 +15,14 @@
     
     
 </head>
+<div id="bodycontainer">
 <body>
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper grey darken-4">
                 <ul>
                 
-                    <a href="/" class="left brand-logo">&nbsp;&nbsp;<img src={% static "images/SnackStalker_Text_WhiteTeal.png" %} width="175"></a>
+                    <a href="{% url 'index' %}" class="left brand-logo">&nbsp;&nbsp;<img src={% static "images/SnackStalker_Text_WhiteTeal.png" %} width="175"></a>
                 
                 
                 
@@ -60,12 +61,15 @@
 
     </header>
     <main class="container">
+        <div id="body">
         {% block content %}
         {% endblock %}
+        </div>
     </main>
   	 <footer class="page-footer transparent teal-text text-teal lighten-2">
        <div class="center-align">All Rights Reserved, &copy; 2019 Snack Stalker &nbsp;</div>
     </footer>
+</div> 
 </body>
 </html>
 
