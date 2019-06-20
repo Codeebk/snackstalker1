@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h4>Post List</h4>
+{% if user.is_authenticated %}
+<h6><a href="{% url 'posts_create' %}">+ Create New Post</a></h6>
+{% else %}
+<h6><a class="teal-text text-teal lighten-2" href="{% url 'login' %}">+ Create New Post</a></h6>
+{% endif %}
 
 {% for post in posts %}
 <a href="{% url 'detail' post.id %}">
