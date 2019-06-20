@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="card">
+    <div class="center card-content collection with-header">
+           
 
-{{ user.username }} 
-<!-- {{ user.post.title }} -->
+        <ul>
+          <li class="collection-header"><h4>{{ user.username }}</h4></li>
+          <li id="li_title" class="collection-item"><span id="detLabel">Username: </span>{{ user.username }}</li>
+          <li id="li_title" class="collection-item"><span id="detLabel">Password: </span>*******</li>
+         
+        </ul>
+
+  
+  </div>
+</div>
+
+<!-- user's posts -->
 {% for post in posts %}
 <a href="{% url 'detail' post.id %}">
     <div class="card horizontal hoverable">
