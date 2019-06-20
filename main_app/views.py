@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 import uuid
 import boto3
 from .models import Post, Photo
@@ -49,8 +49,8 @@ def posts_detail(request, post_id):
   return render(request, 'posts/detail.html', {'post': post})
 
 def get_user_profile(request):
-  
-  return render(request, 'main_app/user_profile.html')
+  posts = Post.objects.filter(user=request.user)
+  return render(request, 'main_app/user_profile.html', {'posts': posts})
 
 def signup(request):
   error_message = ''
