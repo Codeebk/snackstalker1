@@ -64,10 +64,17 @@ img {
 }
 
 body {
-    height: 100%;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
 }
 
-#bodycontainer {
+main {
+    flex: 1 0 auto;
+    min-height: 80vh;
+}
+
+/* #bodycontainer {
     min-height: 100%;
     position: relative;
 }
@@ -82,7 +89,7 @@ body {
     width: 100%;
     height: 50px;
     margin-bottom: 10px;
-}
+} */
 
 
 @media (max-width: 600px) {
