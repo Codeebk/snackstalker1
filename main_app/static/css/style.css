@@ -91,6 +91,16 @@ main {
     margin-bottom: 10px;
 } */
 
+li.collection-item {
+    padding-bottom: 2.3vmin !important;
+}
+
+a.secondary-content.waves-effect.waves-light.btn-small {
+    font-size: 1.5vmin;
+    
+}
+
+
 
 @media (max-width: 600px) {
     img {
