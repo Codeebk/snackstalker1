@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.auth import login, update_session_auth_hash
-from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, UserChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 import uuid
 import boto3
 from .models import Post, Photo
@@ -14,6 +14,8 @@ from .models import Post, Photo
 S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
 BUCKET = 'ushio'
 # BUCKET = 'catcollector9'
+
+
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
@@ -106,3 +108,17 @@ def change_password(request):
     return render(request, 'registration/change_password.html', {
         'form': form
     })
+
+def change_username(request):
+    if request.method == 'POST':
+        form = UserChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            # update_session_auth_hash(request, user) 
+            return redirect('get_user_profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+      form = UserChangeForm(request.user)
+    return render(request, 'registration/change_username.html', {'form': form})
+

@@ -7,7 +7,7 @@
 
         <ul>
           <li class="collection-header center"><h4>{{ user.username }}</h4></li>
-          <li class="collection-item"><div><span id="detLabel">Username: </span>{{ user.username }}<a href="" class="secondary-content waves-effect waves-light btn-small">Change Username</a></div></li>
+          <li class="collection-item"><div><span id="detLabel">Username: </span>{{ user.username }}<a href="{% url 'change_username' %}" class="secondary-content waves-effect waves-light btn-small">Change Username</a></div></li>
           <li class="collection-item"><div><span id="detLabel">Password: </span>*********<a href="{% url 'change_password' %}" class="secondary-content waves-effect waves-light btn-small">Change Password</a></div></li>
          
         </ul>
