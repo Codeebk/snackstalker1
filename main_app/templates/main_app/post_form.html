@@ -2,7 +2,14 @@
 
 {% block content %}
 
+{% if object %}
+
+<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+{% else %}
+
+
 <h4 class="center-align">Create Post</h4>
+{% endif %}
 
     <div class="card hoverable"> 
       <div class="row card-content">
@@ -10,11 +17,11 @@
             {% csrf_token %}
           <div class="row">
             <div class="input-field col s6">
-              <input type="text" name="title" maxlength="100" required="" id="id_title">
+              <input type="text" name="title" maxlength="100" required="" id="id_title" value="{{ post.title }}">
               <label for="id_title">Title</label>
             </div>
             <div class="input-field col s6">
-              <input type="text" class="datepicker" name="date" value="" placeholder="2020-01-01" required="" id="id_date">
+              <input type="text" class="datepicker" name="date" value="{{ post.date }}" placeholder="2020-01-01" required="" id="id_date">
            
             </div>
           </div>
