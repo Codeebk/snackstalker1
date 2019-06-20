@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-    <h3>Details</h3>
+    <h4>Details</h4>
 
     <div class="card">
       
@@ -20,7 +20,7 @@
                 </ul>
               
                 {% if user.username == post.user.username %}
-            <div class="card-action">
+            <div class="card-action center-align">
                 <a href="{% url 'posts_update' post.id %}" class="btn">Edit</a>
                 <a href="{% url 'posts_delete' post.id %}" class="btn red darken-2">Delete</a>
               </div>
