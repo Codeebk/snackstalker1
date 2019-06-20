@@ -42,7 +42,7 @@ def about(request):
   return render(request, 'about.html')
 
 def posts_index(request):
-  posts = Post.objects.all()
+  posts = Post.objects.all().order_by('date')
   return render(request, 'posts/index.html', {'posts': posts})
 
 def posts_detail(request, post_id):
