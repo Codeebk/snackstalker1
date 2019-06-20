@@ -58,6 +58,13 @@ img {
     margin-top: 10px;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 
 @media (max-width: 600px) {
     img {
