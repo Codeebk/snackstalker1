@@ -15,6 +15,7 @@
     
     
 </head>
+<div id="bodycontainer">
 <body>
     <header class="navbar-fixed">
         <nav>
@@ -60,12 +61,15 @@
 
     </header>
     <main class="container">
+        <div id="body">
         {% block content %}
         {% endblock %}
+        </div>
     </main>
   	 <footer class="page-footer transparent teal-text text-teal lighten-2">
        <div class="center-align">All Rights Reserved, &copy; 2019 Snack Stalker &nbsp;</div>
     </footer>
+</div> 
 </body>
 </html>
 
