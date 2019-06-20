@@ -39,6 +39,10 @@ div.row {
     padding-top: 1vmin;
 }
 
+#h6create {
+    margin-top: 25px;
+}
+
 div.col.s2 {
   padding-left: 3vmin;
   padding-top: .5vmin;
