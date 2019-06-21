@@ -2,7 +2,7 @@
 SnackStalker is an app where a user can see live posts about free food in their area. Users can take advantage of resources near them, try new foods, and save money.
 
 ## Screen Shots
-![Landing Page](../master/images/SnackStalkerScreenShot.png =100x20)
+![Landing Page](../master/images/SnackStalkerScreenShot.png)
 
 ## Technologies used
 * Python  
