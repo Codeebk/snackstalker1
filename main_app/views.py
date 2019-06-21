@@ -18,7 +18,7 @@ BUCKET = 'ushio'
 
 
 
-class PostUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdate( UpdateView):
   model = Post
   fields = ['title', 'date', 'time', 'address', 'category', 'description']  
 
