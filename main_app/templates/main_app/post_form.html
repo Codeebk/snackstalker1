@@ -4,14 +4,29 @@
 
 {% if object %}
 
-<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+<h4 class="center" id="edit">Edit Post</h4>
 {% else %}
 
 
 <h4 class="center-align">Create Post</h4>
 {% endif %}
+<div class="card">
+  <div class="card-content">
 
-    <div class="card hoverable"> 
+    <form action="" method="post">
+      <!-- Django requires the following for security purposes -->
+      {% csrf_token %}
+      <table>
+        <!-- Render the inputs inside of <tr>s & <td>s -->
+        {{ form.as_table }}
+      </table>
+      <input type="submit" value="Submit!" class="btn">
+      <a href="{% url 'detail' post.id %}" class="btn red">Cancel</a>
+    </form>
+  </div>
+</div>
+
+    <!-- <div class="card hoverable"> 
       <div class="row card-content">
         <form action="" method="post" class="col s12">
             {% csrf_token %}
@@ -53,7 +68,7 @@
           <div class="center-align"><input type="submit" value="Submit!" class="btn"></div>
         </form>
       </div>
-    </div>
+    </div> -->
 
     <!-- </div>
   </div>   -->
